@@ -1,0 +1,15 @@
+<svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración de un router de redes">
+  <rect width="300" height="180" fill="#dfe9f2"/>
+  <rect x="90" y="95" width="120" height="34" rx="6" fill="#2f6fa8"/>
+  <circle cx="105" cy="112" r="4" fill="#ffffff"/>
+  <circle cx="120" cy="112" r="4" fill="#6fb7d9"/>
+  <g stroke="#1d4f7c" stroke-width="4" stroke-linecap="round">
+    <line x1="150" y1="95" x2="140" y2="70"/>
+    <line x1="150" y1="95" x2="160" y2="70"/>
+  </g>
+  <g stroke="#2f6fa8" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M120 60 a42 42 0 0 1 60 0"/>
+    <path d="M132 68 a26 26 0 0 1 36 0"/>
+  </g>
+  <circle cx="150" cy="60" r="4" fill="#1d4f7c"/>
+</svg>

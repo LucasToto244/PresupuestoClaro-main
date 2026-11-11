@@ -1,0 +1,10 @@
+<svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración de un mensaje de contacto">
+  <rect width="300" height="220" fill="#dfe9f2"/>
+  <rect x="75" y="70" width="150" height="90" rx="10" fill="#ffffff" stroke="#2f6fa8" stroke-width="4"/>
+  <polyline points="75,78 150,130 225,78" fill="none" stroke="#1d4f7c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="210" cy="150" r="22" fill="#6fb7d9"/>
+  <g stroke="#1d4f7c" stroke-width="4" stroke-linecap="round">
+    <line x1="203" y1="150" x2="217" y2="150"/>
+    <line x1="210" y1="143" x2="210" y2="157"/>
+  </g>
+</svg>

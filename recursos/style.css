@@ -1,0 +1,603 @@
+/* Reset universal y modelo de caja */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ink: #16232f;
+  --paper: #eef3f8;
+  --paper-alt: #dfe9f2;
+  --accent: #2f6fa8;
+  --accent-dark: #1d4f7c;
+  --sky: #6fb7d9;
+  --line: #c7d6e3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  background-color: var(--paper);
+  line-height: 1.55;
+}
+
+h1,h2,h3 {
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--accent-dark);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 2px;
+}
+
+/* Contenedor de contención legible */
+.contenedor {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Encabezado y navegación (Flexbox) */
+.sitio-header {
+  background-color: var(--ink);
+  color: var(--paper);
+  border-bottom: 3px solid var(--sky);
+}
+
+.barra-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 1.3rem;
+  color: var(--paper);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.logo span {
+  color: var(--sky);
+}
+
+.menu-nav {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.menu-nav a {
+  color: var(--paper);
+  text-decoration: none;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.menu-nav a:hover,
+.menu-nav a[aria-current="page"] {
+  border-bottom-color: var(--sky);
+}
+
+/* Inicio */
+.inicio {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 3rem 0;
+}
+
+.texto-inicio {
+  flex: 1 1 55%;
+}
+
+.imagen-inicio {
+  flex: 1 1 40%;
+}
+
+.inicio h1 {
+  font-size: 2.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.inicio p {
+  margin-bottom: 1.25rem;
+  max-width: 46ch;
+}
+
+.boton {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--paper);
+  text-decoration: none;
+  padding: 0.7rem 1.3rem;
+  border-radius: 2px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background-color: var(--accent-dark);
+}
+
+.boton-secundario {
+  background-color: transparent;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+}
+
+/* Secciones generales */
+section {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Tarjetas de servicios (Flexbox) */
+.lista-servicios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.tarjeta-servicio {
+  flex: 1 1 260px;
+  background-color: var(--paper-alt);
+  border: 1px solid var(--line);
+  padding: 1rem;
+}
+
+.tarjeta-servicio img {
+  margin-bottom: 0.75rem;
+}
+
+.tarjeta-servicio h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Estructura multi-columna: contenido + aside (Flexbox) */
+.columnas {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.columna-principal {
+  flex: 2 1 0;
+}
+
+.columna-lateral {
+  flex: 1 1 0;
+  background-color: var(--paper-alt);
+  border: 1px solid var(--line);
+  padding: 1rem 1.25rem;
+}
+
+.columna-lateral h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Agenda de presupuesto */
+.agenda {
+  border: 1px solid var(--line);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(22, 35, 47, 0.08);
+}
+
+.agenda-fila {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.1rem;
+  border-bottom: 1px solid var(--line);
+  border-left: 5px solid var(--accent);
+  transition: background-color 0.15s ease;
+}
+
+.agenda-fila:hover {
+  background-color: var(--paper);
+}
+
+.agenda-fila:last-child {
+  border-bottom: none;
+}
+
+.agenda-fila.fila-urgente {
+  border-left-color: var(--accent-dark);
+}
+
+.agenda-fila.fila-baja {
+  border-left-color: var(--sky);
+}
+
+.agenda-item {
+  flex: 1 1 auto;
+}
+
+.agenda-horas {
+  flex: 0 0 90px;
+  color: #55636e;
+  font-size: 0.9rem;
+}
+
+.agenda-prioridad {
+  flex: 0 0 auto;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.fila-urgente .agenda-prioridad {
+  background-color: var(--accent-dark);
+}
+
+.fila-baja .agenda-prioridad {
+  background-color: var(--sky);
+  color: var(--ink);
+}
+
+.agenda-quitar {
+  flex: 0 0 auto;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.agenda-quitar:hover {
+  border-color: var(--accent-dark);
+  color: var(--accent-dark);
+}
+
+.agenda-agregar {
+  display: block;
+  width: 100%;
+  padding: 0.9rem;
+  background-color: var(--paper-alt);
+  border: none;
+  border-top: 1px dashed var(--line);
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+.agenda-agregar:hover {
+  background-color: var(--sky);
+  color: var(--ink);
+}
+
+.agenda-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.9rem 1.1rem;
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+/* Formulario de contacto */
+.formulario {
+  max-width: 520px;
+}
+
+.campo {
+  margin-bottom: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.campo label {
+  font-size: 0.9rem;
+}
+
+.campo input,
+.campo textarea {
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--line);
+  background-color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.campo textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.buscador-servicios {
+  max-width: 320px;
+  margin-bottom: 1.5rem;
+}
+
+/* Pie de página (Flexbox en columnas) */
+.sitio-footer {
+  background-color: var(--ink);
+  color: var(--paper-alt);
+  margin-top: 2rem;
+}
+
+.footer-columnas {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 1.25rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.footer-columnas > div {
+  flex: 1 1 0;
+}
+
+.footer-columnas h4 {
+  color: var(--sky);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-columnas p,
+.footer-columnas li {
+  font-size: 0.85rem;
+  color: var(--paper-alt);
+  list-style: none;
+}
+
+.footer-columnas li {
+  margin-bottom: 0.35rem;
+}
+
+.redes-lista a {
+  color: var(--paper-alt);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.redes-lista a:hover {
+  color: var(--sky);
+}
+
+.red-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Diseño adaptable — breakpoints */
+
+/* Tablet: 720px o menos */
+@media (max-width: 720px) {
+  .inicio {
+    flex-direction: column;
+  }
+
+  .columnas {
+    flex-direction: column;
+  }
+
+  .columna-principal,
+  .columna-lateral {
+    width: 100%;
+  }
+
+  .footer-columnas {
+    flex-wrap: wrap;
+  }
+
+  .footer-columnas > div {
+    flex: 1 1 45%;
+  }
+}
+
+/* Smartphone: 480px o menos */
+@media (max-width: 480px) {
+  .barra-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .menu-nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .inicio h1 {
+    font-size: 1.6rem;
+  }
+
+  .agenda-fila {
+    flex-wrap: wrap;
+  }
+
+  .footer-columnas {
+    flex-direction: column;
+  }
+}
+
+/* ===== Fase 3: interactividad ===== */
+
+.oculto {
+  display: none !important;
+}
+
+/* Botón hamburguesa (visible solo en smartphone) */
+.btn-menu {
+  display: none;
+  background: none;
+  border: 1px solid var(--sky);
+  color: var(--paper);
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Validación visual del formulario */
+.campo input.campo-error,
+.campo textarea.campo-error {
+  background-color: #fce4d6;
+  border-color: #c0562b;
+}
+
+.campo input.campo-ok,
+.campo textarea.campo-ok,
+.campo select.campo-ok {
+  background-color: #e2f0d9;
+  border-color: #6a9c4f;
+}
+
+.campo select {
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--line);
+  background-color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.mensaje-form {
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  background-color: #e2f0d9;
+  border: 1px solid #6a9c4f;
+}
+
+.sin-resultados {
+  margin-top: 1rem;
+}
+
+/* Agenda dinámica */
+.agenda-nuevo {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.9rem 1.1rem 0;
+  border-top: 1px dashed var(--line);
+  align-items: flex-start;
+}
+
+.agenda-nuevo .campo {
+  margin-bottom: 0.9rem;
+  flex: 1 1 0;
+}
+
+.agenda-nuevo .campo:nth-child(2) {
+  flex: 0 0 90px;
+}
+
+.agenda-vacia {
+  padding: 0.9rem 1.1rem;
+  color: #55636e;
+}
+
+@media (max-width: 720px) {
+  .agenda-nuevo {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .barra-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .btn-menu {
+    display: block;
+  }
+
+  /* Menú móvil oculto hasta que JS le agrega la clase "activo" */
+  .menu-nav {
+    display: none;
+  }
+
+  .menu-nav.activo {
+    display: flex;
+  }
+}
+
+/* Agenda con tarifas y desglose */
+.agenda-nuevo {
+  flex-wrap: wrap;
+}
+
+.agenda-nuevo .campo {
+  flex: 1 1 160px;
+}
+
+.agenda-nuevo .campo.campo-servicio {
+  flex: 2 1 260px;
+}
+
+.agenda-nuevo .campo.campo-horas {
+  flex: 0 0 90px;
+}
+
+.agenda-horas {
+  flex: 0 0 auto;
+}
+
+.agenda-subtotal {
+  flex: 0 0 auto;
+  min-width: 80px;
+  text-align: right;
+  font-weight: 600;
+}
+
+.agenda-desglose {
+  padding: 0.7rem 1.1rem;
+  background-color: var(--paper);
+  border-top: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+.agenda-desglose p {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}

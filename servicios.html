@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios y presupuesto — PresupuestoClaro</title>
+  <link rel="stylesheet" href="recursos/style.css">
+</head>
+<body>
+
+  <header class="sitio-header">
+    <nav class="barra-nav">
+      <a href="index.html" class="logo">Presupuesto <span>Claro</span></a>
+      <button type="button" class="btn-menu" id="btn-menu" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="menu-nav">&#9776;</button>
+      <ul class="menu-nav" id="menu-nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html" aria-current="page">Servicios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenedor">
+
+    <section style="border-top: none;">
+      <h2>Nuestros servicios</h2>
+
+      <div class="campo buscador-servicios">
+        <label for="buscar-servicio">Buscar servicio</label>
+        <input type="search" id="buscar-servicio" name="buscar-servicio" placeholder="Ej: redes, soporte, desarrollo...">
+      </div>
+
+      <div class="lista-servicios" id="catalogo-servicios">
+        <article class="tarjeta-servicio">
+          <img src="recursos/imagenes/servicio-redes.svg" alt="Ilustración de un router de redes" width="300" height="180">
+          <h3>Redes y conectividad</h3>
+          <p>Instalación y orden de la red del local u oficina.</p>
+        </article>
+        <article class="tarjeta-servicio">
+          <img src="recursos/imagenes/servicio-soporte.svg" alt="Ilustración de auriculares de soporte técnico" width="300" height="180">
+          <h3>Soporte técnico</h3>
+          <p>Mantenimiento y atención de problemas del día a día.</p>
+        </article>
+        <article class="tarjeta-servicio">
+          <img src="recursos/imagenes/servicio-desarrollo.svg" alt="Ilustración de código de programación" width="300" height="180">
+          <h3>Desarrollo a medida</h3>
+          <p>Sitios y pequeñas herramientas hechas a tu necesidad.</p>
+        </article>
+      </div>
+      <p class="sin-resultados oculto" id="sin-resultados">No encontramos servicios que coincidan con tu búsqueda.</p>
+    </section>
+
+    <section>
+      <h2>Agenda de presupuesto</h2>
+      <div class="columnas">
+
+        <div class="columna-principal">
+          <div class="agenda" id="lista-agenda">
+            <div id="filas-agenda">
+              <div class="agenda-fila fila-normal">
+                <span class="agenda-item">Relevamiento inicial</span>
+                <span class="agenda-horas">2 hs</span>
+                <span class="agenda-prioridad">Normal</span>
+              </div>
+              <div class="agenda-fila fila-urgente">
+                <span class="agenda-item">Instalación de red</span>
+                <span class="agenda-horas">4 hs</span>
+                <span class="agenda-prioridad">Urgente</span>
+              </div>
+              <div class="agenda-fila fila-baja">
+                <span class="agenda-item">Soporte mensual</span>
+                <span class="agenda-horas">3 hs</span>
+                <span class="agenda-prioridad">Baja</span>
+              </div>
+            </div>
+            <div class="agenda-nuevo">
+              <div class="campo campo-servicio">
+                <label for="nuevo-servicio">Servicio</label>
+                <select id="nuevo-servicio" name="nuevo-servicio"></select>
+              </div>
+              <div class="campo campo-horas">
+                <label for="nuevo-horas">Horas</label>
+                <input type="number" id="nuevo-horas" name="nuevo-horas" min="1" step="1" placeholder="Ej: 2">
+              </div>
+              <div class="campo campo-prioridad">
+                <label for="nuevo-prioridad">Prioridad</label>
+                <select id="nuevo-prioridad" name="nuevo-prioridad">
+                  <option value="Urgente">Urgente (+30%)</option>
+                  <option value="Normal" selected>Normal</option>
+                  <option value="Baja">Baja (−10%)</option>
+                </select>
+              </div>
+              <div class="campo campo-personalizado oculto" id="grupo-personalizado">
+                <label for="nuevo-nombre">Nombre del ítem</label>
+                <input type="text" id="nuevo-nombre" name="nuevo-nombre" placeholder="Ej: Configuración de impresora">
+              </div>
+              <div class="campo campo-personalizado oculto" id="grupo-tarifa">
+                <label for="nuevo-tarifa">Tarifa por hora ($)</label>
+                <input type="number" id="nuevo-tarifa" name="nuevo-tarifa" min="1" step="100" placeholder="Ej: 15000">
+              </div>
+            </div>
+            <button type="button" class="agenda-agregar" id="agregar-item">+ Agregar ítem a la agenda</button>
+            <div class="agenda-desglose">
+              <p><span>Horas totales</span><span id="desglose-horas">9 hs</span></p>
+              <p><span>Subtotal (tarifa × horas)</span><span id="desglose-base">—</span></p>
+              <p><span>Recargos / descuentos por prioridad</span><span id="desglose-ajuste">—</span></p>
+            </div>
+            <div class="agenda-total">
+              <span>Total estimado</span>
+              <span id="total-agenda">—</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="columna-lateral">
+          <h3>Cómo funciona</h3>
+          <p>Elegí los ítems que necesitás y sumalos a tu agenda de presupuesto. Podés quitar los que no apliquen.</p>
+          <p>Elegí un servicio del catálogo (o "Otro" para uno personalizado), indicá horas y prioridad, y presioná <strong>+ Agregar ítem</strong>. Las tarifas son por hora; las urgencias llevan +30% y las de prioridad baja −10%. El total se recalcula en tiempo real.</p>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="sitio-footer">
+    <div class="footer-columnas">
+      <div>
+        <h4>PresupuestoClaro</h4>
+        <p>Proyecto integrador de la Tecnicatura en Programación de Sistemas. Un equipo chico armando presupuestos de IT, prolijos como una agenda.</p>
+      </div>
+      <div>
+        <h4>Nos encontrás en</h4>
+        <ul class="redes-lista">
+          <li><a href="#"><span class="red-icono">IG</span> @presupuestoclaro</a></li>
+          <li><a href="#"><span class="red-icono">IN</span> PresupuestoClaro</a></li>
+          <li><a href="#"><span class="red-icono">GH</span> presupuestoclaro</a></li>
+          <li><a href="#"><span class="red-icono">WA</span> Escribinos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Mapa del sitio</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="recursos/funciones.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración de código de programación">
+  <rect width="300" height="180" fill="#dfe9f2"/>
+  <rect x="85" y="65" width="130" height="60" rx="6" fill="#ffffff" stroke="#2f6fa8" stroke-width="4"/>
+  <g stroke="#1d4f7c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <polyline points="108,80 96,95 108,110"/>
+    <polyline points="192,80 204,95 192,110"/>
+  </g>
+  <line x1="140" y1="112" x2="160" y2="78" stroke="#6fb7d9" stroke-width="5" stroke-linecap="round"/>
+</svg>
